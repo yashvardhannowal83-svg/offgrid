@@ -1,0 +1,3 @@
+import { Pressable, Text, StyleSheet } from 'react-native';
+export function Button({label,kind='primary',...props}:{label:string;kind?:'primary'|'secondary';onPress?:()=>void}){return <Pressable {...props} style={[s.base,kind==='secondary'?s.secondary:s.primary]}><Text style={kind==='secondary'?s.secondaryText:s.primaryText}>{label}</Text></Pressable>}
+const s=StyleSheet.create({base:{minHeight:52,borderRadius:12,paddingHorizontal:24,alignItems:'center',justifyContent:'center'},primary:{backgroundColor:'#E6E9EE'},secondary:{backgroundColor:'#15171B',borderWidth:1,borderColor:'#5F6772'},primaryText:{color:'#0B0C0E',fontSize:17,fontWeight:'600'},secondaryText:{color:'#ECEEF1',fontSize:17,fontWeight:'600'}});
