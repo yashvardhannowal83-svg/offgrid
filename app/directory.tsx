@@ -1,0 +1,2 @@
+import { Screen, AppText } from '../src/ui';
+export default function Directory(){return <Screen><AppText variant="title">Get help</AppText><AppText tone="secondary">Relief organisations can be listed here when their announcements reach this phone.</AppText><AppText>Riverside Relief Kitchen</AppText><AppText tone="secondary">Food and water · demo listing</AppText><AppText>St Anselm Field Clinic</AppText><AppText tone="secondary">Medical care · demo listing</AppText></Screen>}
