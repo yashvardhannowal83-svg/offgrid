@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "OffGrid",
+    "slug": "offgrid",
+    "version": "1.0.0",
+    "orientation": "portrait",
+    "userInterfaceStyle": "dark",
+    "android": { "package": "com.offgrid.app", "predictiveBackGestureEnabled": false },
+    "scheme": "offgrid",
+    "backgroundColor": "#000000",
+    "plugins": ["expo-router", ["expo-splash-screen", {"backgroundColor":"#000000","imageWidth":160}]],
+    "newArchEnabled": true
+  }
+}
