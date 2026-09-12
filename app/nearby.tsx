@@ -1,0 +1,7 @@
+import { useState } from 'react';
+import { View, TextInput, FlatList, StyleSheet } from 'react-native';
+import { Screen, AppText, Button } from '../src/ui';
+
+type M={id:string;body:string;mine:boolean};
+export default function Nearby(){const [text,setText]=useState('');const [msgs,setMsgs]=useState<M[]>([]);const send=()=>{const body=text.trim();if(!body)return;setMsgs(x=>[...x,{id:String(Date.now()),body,mine:true}]);setText('');};return <Screen scroll={false}><View style={s.head}><AppText variant="title">Talk to people nearby</AppText><AppText tone="signal">Mesh simulator is on</AppText></View><FlatList style={s.list} data={msgs} keyExtractor={x=>x.id} renderItem={({item})=><View style={[s.bubble,item.mine&&s.mine]}><AppText>{item.body}</AppText><AppText variant="meta" tone="muted">{item.mine?'Queued locally':'Nearby'}</AppText></View>} ListEmptyComponent={<AppText tone="secondary">No messages yet. Your message is stored locally in this demo.</AppText>}/><View style={s.compose}><TextInput value={text} onChangeText={setText} placeholder="Write a message" placeholderTextColor="#8A929E" style={s.input} multiline/><Button label="Send" onPress={send}/></View></Screen>}
+const s=StyleSheet.create({head:{gap:8,padding:16},list:{flex:1,padding:16},bubble:{backgroundColor:'#15171B',padding:14,borderRadius:12,marginBottom:10},mine:{backgroundColor:'#1F2228'},compose:{padding:16,gap:10},input:{minHeight:52,maxHeight:120,borderWidth:1,borderColor:'#5F6772',borderRadius:12,color:'#ECEEF1',padding:14,fontSize:17}});
